@@ -1,0 +1,20 @@
+﻿<Window x:Class="PostirushkiNew.Windows.ChangeStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PostirushkiNew.Windows"
+        mc:Ignorable="d"
+        Title="ChangeStatusWindow" Height="200" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Статус стирки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" FontSize="16" FontFamily="Arial" Grid.Row="0"/>
+        <Button Content="Изменить статус" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="32" FontSize="16" FontFamily="Arial" Click="Button_Click" Grid.Row="2"/>
+        <ComboBox x:Name="cmbStatus"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" FontFamily="Arial" Height="33" Grid.Row="1">
+        </ComboBox>
+    </Grid>
+</Window>

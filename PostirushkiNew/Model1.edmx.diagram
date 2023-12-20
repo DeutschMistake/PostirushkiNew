@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b9190cff6e304291a7fde8803881a3b0" Name="Diagram1">
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Branch" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Calculation" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Offer" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Powder" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Role" Width="1.5" PointX="1.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Service" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Shift" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.Staff" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.WashingMachine" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PostirushkiFrolovModel.WashingStatus" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Shift_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_WashingMachine_Branch" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_Calculation" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_Powder" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_Shift" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_WashingMachine" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Offer_WashingStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Staff_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="PostirushkiFrolovModel.FK_Shift_Staff" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,70 @@
+﻿<Window x:Class="PostirushkiNew.StaffWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PostirushkiNew"
+        mc:Ignorable="d"
+        Title="StaffWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <DataTemplate x:Key="HeaderTemplate">
+            <TextBlock Text="{Binding}" Width="80" TextWrapping="Wrap" TextAlignment="Center"/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="650"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TabControl x:Name="TCOffers" SelectionChanged="TabControl_SelectionChanged" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <TabItem x:Name="ActiveOff"  Header="Активные стирки" HeaderTemplate="{StaticResource HeaderTemplate}">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DGActiveOff" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" ItemsSource="{Binding tableTemplates}" MouseDoubleClick="DGActiveOffDC">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="100" Binding="{Binding Number}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Номер стиральной машины" Width="175" Binding="{Binding IdWM}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Порошок" Width="200" Binding="{Binding PowderTitle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сушка" Width="100" Binding="{Binding IsDrying}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding Staff}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="ReadyOff" Header="Завершенные стирки" HeaderTemplate="{StaticResource HeaderTemplate}">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DGReadyOff" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" ItemsSource="{Binding tableTemplates}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№" Width="100" Binding="{Binding Number}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Номер стиральной машины" Width="175" Binding="{Binding IdWM}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Порошок" Width="200" Binding="{Binding PowderTitle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сушка" Width="100" Binding="{Binding IsDrying}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Сотрудник" Width="*" Binding="{Binding Staff}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Статус" Width="*" Binding="{Binding Status}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Report" Header="Кассовый отчет" HeaderTemplate="{StaticResource HeaderTemplate}">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="StatLabel1" Content="Количество стирок за смену:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0"/>
+                    <Label x:Name="StatLabel2" Content="Сумма наличного расчета:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+                    <Label x:Name="StatLabel3" Content="Сумма безналичного расчета:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+                </Grid>
+            </TabItem>
+            
+        </TabControl>
+        <Button x:Name="AWButton" Content="Добавить стирку" Grid.Column="1" Height="33" Width="90" FontSize="11" Click="AWButton_Click"/>
+    </Grid>
+</Window>
